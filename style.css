@@ -27,7 +27,7 @@ nav {
 }
 
 nav img {
-    max-width: 100%; /* Ensures the logo doesn't stretch beyond the screen size */
+    width: 200px; /* Ensures the logo doesn't stretch beyond the screen size */
     height: auto;
 }
 
