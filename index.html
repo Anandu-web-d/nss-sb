@@ -29,6 +29,26 @@
         <p>Welcome to National Service Scheme of SB College</p>
         <a href="" class="hero-btn">Contact Us</a>
     </div>
+</section>
+<section class="image-scroll-section">
+    <div class="scrolling-images">
+        <img src="images/diwali.jpg" alt="Image 1">
+        <img src="images/WhatsApp Image 2024-10-14 at 21.41.46_c268a469.jpg" alt="Image 2">
+        <img src="images/WhatsApp Image 2024-10-14 at 22.10.23_a47f7650.jpg" alt="Image 3">
+        <img src="images/diwali.jpg" alt="Image 4">
+        <img src="images/WhatsApp Image 2024-10-14 at 22.10.23_a47f7650.jpg" alt="Image 5">
+    </div>
+</section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="social-buttons">
+            <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 NSS SB College | All right resived anandu</p>
+    </footer>
+
 
 <script>
     var navLinks = document.getElementById("navLinks");
@@ -38,6 +58,33 @@
     function hidemenu() {
         navLinks.style.right = "-200px";
     }
+    // Auto-scroll for image section
+    const scrollingImages = document.querySelector('.scrolling-images');
+    const images = document.querySelectorAll('.scrolling-images img');
+    let imageIndex = 0;
+
+    function autoScrollImages() {
+        imageIndex++;
+        scrollingImages.style.transform = `translateX(-${imageIndex * 100}px)`;
+
+        // Reset loop when reaching the halfway point
+        if (imageIndex >= images.length / 2) {
+            scrollingImages.style.transition = 'none'; // Temporarily remove transition
+            imageIndex = 0;
+            scrollingImages.style.transform = `translateX(0)`; // Reset position
+            setTimeout(() => {
+                scrollingImages.style.transition = 'transform 0.5s ease-in-out'; // Reapply transition
+            }, 0);
+        }
+    }
+
+    // Slide images every 3 seconds
+    setInterval(autoScrollImages, 3000);
+</script>
+
+</script>
+
+
 </script>
 </body>
 </html>

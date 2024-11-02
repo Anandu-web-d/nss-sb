@@ -2,11 +2,10 @@
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    box-sizing: border-box; /* Ensures padding and borders are included in the element's total width and height */
-}
+    box-sizing: border-box; 
 
 html, body {
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    overflow-x: hidden; 
 }
 
 .header {
@@ -23,11 +22,11 @@ nav {
     padding: 0 2%;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Makes sure the nav fits within the screen */
+    width: 100%; 
 }
 
 nav img {
-    width: 200px; /* Ensures the logo doesn't stretch beyond the screen size */
+    width: 200px; 
     height: auto;
 }
 
@@ -53,7 +52,19 @@ nav img {
     text-decoration: none;
     font-size: 13px;
 }
+.nav-links ul li::after{
+ content: '';
+ width: 0%;
+ height: 2px;
+ background: #f44336;
+ display: block;
+margin: auto;
+transition: 0.5s;
+}
 
+.nav-links ul li:hover::after{
+    width: 100%;
+}
 .text-box {
     width: 100%;
     color: #fff;
@@ -62,7 +73,7 @@ nav img {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    padding: 0 15px; /* Padding to prevent content from touching the screen edge */
+    padding: 0 15px; 
 }
 
 .text-box img {
@@ -99,7 +110,7 @@ nav .fa {
     display: none;
 }
 
-/* Mobile responsiveness */
+
 @media (max-width: 800px) {
     .text-box h1 {
         font-size: 18px;
@@ -122,7 +133,7 @@ nav .fa {
     }
 
     .text-box {
-        padding: 0 10px; /* Ensure no overflow */
+        padding: 0 10px; 
     }
 
     .text-box img {
@@ -134,7 +145,7 @@ nav .fa {
     }
 
     .hero-btn {
-        padding: 10px 20px; /* Smaller button for mobile */
+        padding: 10px 20px; 
     }
 
     nav .fa {
@@ -145,6 +156,82 @@ nav .fa {
     }
 
     body {
-        overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+        overflow-x: hidden; 
     }
+}
+
+
+/* Footer Section */
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color:grey; /* Match this to friend page background */
+        color:black;
+    }
+    
+
+footer .social-buttons {
+    margin-bottom: 10px;
+}
+
+footer .social-buttons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Image Scrolling Section */
+.image-scroll-section {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #f4f4f9;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.scrolling-images {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.scrolling-images img {
+    max-height: 400px;
+    width: auto; /* Maintains aspect ratio */
+    flex-shrink: 0;
+    margin-right: 10px;
+    object-fit: cover; /* Crops the image if it exceeds bounds */
+}
+
+.image-scroll-section {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #f4f4f9;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.scrolling-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: calc(200%); /* Enough space to fit all images, including duplicates */
+}
+
+.scrolling-images img {
+    max-height: 400px;
+    width: auto;
+    flex-shrink: 0;
+    object-fit: cover;
+    margin-right: 10px;
 }
